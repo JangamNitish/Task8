@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import DBqueries.Queries;
+import Validation.ValidationMethods;
 import pojo.UserRegPojo;
 
 public class UserRegData {
@@ -14,6 +15,7 @@ public class UserRegData {
 
 	EmailValidator validator = EmailValidator.getInstance();
 	Queries ob = new Queries();
+	ValidationMethods Valob = new ValidationMethods();
 
 	public String regestation(UserRegPojo u, Connection conn) throws SQLException {
 		PreparedStatement pstmt = conn.prepareStatement(ob.insert());

@@ -52,7 +52,7 @@ public class ViewRecomendations extends HttpServlet {
 			Connection conn = con.getConnection();
 			PrintWriter out = response.getWriter();
 			SubmitRecomendationPojo json = gson.fromJson(request.getReader(), SubmitRecomendationPojo.class);
-			List<ViewRecomendationsPojo> output = ViewRecomendationsData.viewRecomendation(json, conn);
+			List<Object> output = ViewRecomendationsData.viewRecomendation(json, conn);
 			response.setContentType("application/JSON");
 			String string = gson.toJson(output);
 			out.println(string);
